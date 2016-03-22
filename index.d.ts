@@ -50,7 +50,7 @@ declare namespace Enzyme {
          * @param node
          */
         contains(node: ReactElement<any>): Boolean;
-
+        
         /**
          * Returns whether or not the current node has a className prop including the passed in class name.
          * @param className
@@ -76,6 +76,13 @@ declare namespace Enzyme {
          * @param [selector]
          */
         children(selector?: EnzymeSelector): T;
+        
+        /**
+         * Shorthand for children().at(index)
+         * @param index
+         */
+        childAt(index: number): T;
+
 
         /**
          * Returns a wrapper around all of the parents/ancestors of the wrapper. Does not include the node in the
@@ -298,6 +305,7 @@ declare namespace Enzyme {
 
     export interface ShallowWrapper<P, S> extends CommonWrapper<ShallowWrapper<P, S>, P, S> {
         shallow(): ShallowWrapper<P, S>;
+        unmount(): ShallowWrapper<P, S>;
 
         render(): CheerioWrapper<P, S>;
     }
