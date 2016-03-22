@@ -304,7 +304,7 @@ declare namespace Enzyme {
     }
 
     export interface ShallowWrapper<P, S> extends CommonWrapper<ShallowWrapper<P, S>, P, S> {
-        shallow(): ShallowWrapper<P, S>;
+        shallow(options?: { context?: any }): ShallowWrapper<P, S>;
         unmount(): ShallowWrapper<P, S>;
 
         render(): CheerioWrapper<P, S>;
