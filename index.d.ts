@@ -303,7 +303,7 @@ declare namespace Enzyme {
     }
 
     export interface ReactWrapper<P, S> extends CommonWrapper<ReactWrapper<P, S>, P, S> {
-
+        unmount(): ReactWrapper<P, S>;
     }
 
     export interface CheerioWrapper<P, S> extends CommonWrapper<CheerioWrapper<P, S>, P, S> {
